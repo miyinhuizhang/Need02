@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.objectFactory" value="spring" />
+	<package name="Need02"  extends="struts-default">
+		<!--  用户登录  -->
+		<action name="userAction" class="userAct" method="doLogin">
+			<result name="error">/jsp/error.jsp</result>
+			<result name="input">index.jsp</result>
+			<result name="success">/Company/main.jsp</result>
+			<result name="XHSUCCESS">/index.jsp</result>
+		</action>
+		<!--  用户注册信息  -->
+		<action name="userRegister" class="userAct" method="doAdd">
+			<result name="error">/jsp/error.jsp</result>
+			<result name="success">../index.jsp</result>
+		</action>
+		<!--  用户添加技术信息  -->
+		<action name="technologyAdd" class="tchnologyAct" method="doAdd">
+			<result name="error">/jsp/error.jsp</result>
+			<result name="success">/index.jsp</result>
+		</action>
+	</package>
+</struts>    
